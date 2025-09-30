@@ -2,6 +2,41 @@
 
 Este proyecto implementa un sistema de **Retrieval Augmented Generation (RAG)** que permite consultar documentos PDF utilizando técnicas de procesamiento de lenguaje natural y embeddings. El sistema divide documentos largos en fragmentos manejables, los convierte en representaciones vectoriales y permite realizar consultas inteligentes sobre el contenido.
 
+## 📝 Documentación del notebook: simple-rag.ipynb
+
+Este notebook implementa un flujo completo de RAG sobre documentos PDF, utilizando LangChain y modelos de lenguaje de última generación. Permite cargar un PDF, segmentarlo en fragmentos semánticos, generar embeddings, almacenar los vectores en una base Chroma y realizar consultas contextuales con historial conversacional.
+
+### Características principales
+- Carga automática de documentos PDF y extracción de texto
+- Segmentación inteligente en chunks configurables
+- Generación de embeddings con modelos OpenAI o GitHub Models
+- Almacenamiento persistente en ChromaDB
+- Recuperación semántica y respuestas contextuales usando LLM
+- Soporte para historial conversacional (history-aware retriever)
+- Ejemplo de consultas encadenadas y memoria de chat
+
+### Ejemplo de uso
+El notebook incluye ejemplos prácticos de preguntas sobre el documento, mostrando cómo el sistema responde de forma contextual y recuerda el historial de la conversación:
+
+```python
+print(ask_to_chatbot("¿Qué es RISC?"))
+print(ask_to_chatbot("¿Y CISC?"))
+print(ask_to_chatbot("¿Qué te pregunté antes?"))
+print(ask_to_chatbot("¿Y después de preguntarte por RISC, por qué te pregunté?"))
+```
+
+### Requisitos
+- Python 3.13+
+- API Key de GitHub Models o OpenAI
+- Dependencias: langchain, langchain-community, pypdf, openai, tiktoken, python-dotenv
+
+### Archivos relevantes
+- `simple-rag.ipynb`: Notebook principal con el flujo RAG completo
+- `docs/Resumen IC2.pdf`: Documento de ejemplo para pruebas
+- `.env`: Variables de entorno para las API keys
+
+Para más detalles sobre la configuración y el flujo de trabajo, consulta las secciones siguientes de este README.
+
 ## 🎯 Objetivo
 
 Desarrollar un sistema RAG completo que permita:

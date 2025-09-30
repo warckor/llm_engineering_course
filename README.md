@@ -98,18 +98,30 @@ Sistema completo de consulta inteligente de documentos PDF utilizando técnicas 
 
 #### Pipeline RAG Completo
 
+- Carga automática y segmentación de documentos PDF
+- Generación de embeddings con modelos OpenAI, Cohere o GitHub Models
+- Almacenamiento persistente en ChromaDB
+- Recuperación semántica y respuestas contextuales usando LLM
+- Soporte para historial conversacional (history-aware retriever)
+- Ejemplo de consultas encadenadas y memoria de chat
+
+#### Notebooks Destacados
+
+- **simple-rag.ipynb**: Implementa el flujo completo de RAG sobre PDF, con ejemplos de preguntas encadenadas y memoria conversacional.
+- **split-text.ipynb**: Ejemplo de segmentación y análisis de texto en documentos PDF.
+
 ##### Procesamiento de Documentos
 
 - **Carga de PDFs**: PyPDFLoader con soporte asíncrono
-- **Segmentación inteligente**: RecursiveCharacterTextSplitter (chunks 1000 chars, overlap 200)
+- **Segmentación inteligente**: RecursiveCharacterTextSplitter (chunks configurables)
 - **Preservación de metadatos**: Información de páginas y estructura
 - **Gestión de errores**: Manejo robusto de archivos problemáticos
 
 ##### Sistema de Consultas
 
-- **Embeddings semánticos**: Cohere Embed v3 Multilingual
+- **Embeddings semánticos**: OpenAI, Cohere, GitHub Models
 - **Búsqueda contextual**: Similitud por significado, no palabras clave
-- **Generación de respuestas**: Cohere Command-A optimizado para español
+- **Generación de respuestas**: LLM optimizados para español
 - **Trazabilidad**: Referencias exactas a fuentes utilizadas
 
 #### Herramientas Utilizadas
@@ -117,7 +129,7 @@ Sistema completo de consulta inteligente de documentos PDF utilizando técnicas 
 ```bash
 - LangChain Community (procesamiento documentos)
 - PyPDF (extracción texto PDF)
-- OpenAI API / Cohere (modelos y embeddings)
+- OpenAI API / Cohere / GitHub Models (modelos y embeddings)
 - Tiktoken (análisis de tokens)
 - python-dotenv (gestión variables)
 ```
