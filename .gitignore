@@ -214,3 +214,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# databases
+chroma_db/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Other files to ignore
+docs/
